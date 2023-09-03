@@ -5,7 +5,7 @@ import "../App.css";
 
 const Homepage = () => {
   return (
-    <div className="home-container">
+    <section id="home" className="home-container">
       <div className="home-content">
         <div className="home-info">
           <h1>Little Lemon</h1>
@@ -25,15 +25,16 @@ const Homepage = () => {
           alt="Best Food Image"
           width={440}
           height={548}
+          loading="eager"
         />
       </div>
-    </div>
+    </section>
   );
 };
 
 const Specials = () => {
   return (
-    <div className="specials-container">
+    <section id="menu" className="specials-container">
       <h1>This weeks Specials</h1>
 
       <a className="btn" href="#">
@@ -42,7 +43,7 @@ const Specials = () => {
 
       <div className="cards">
         <div className="card">
-          <img src="./greek salad.jpg" alt="" />
+          <img src="./greek salad.jpg" loading="eager" alt="greek salad" />
           <div className="card-data">
             <div className="title">
               {" "}
@@ -78,16 +79,17 @@ const Specials = () => {
           </div>
         </div>{" "}
         <div className="card">
-          <img src="./bruchetta.svg" alt="bruchetta" />
+          <img src="./bruchetta.svg" loading="eager" alt="bruchetta" />
           <div className="card-data">
             <div className="title">
               {" "}
               <h3>Bruschetta</h3>
-              <p>$ 5.99</p>
+              <p>$5.99</p>
             </div>
 
             <p>
-            Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive.
+              Our Bruschetta is made from grilled bread that has been smeared
+              with garlic and seasoned with salt and olive.
             </p>
             <div className="order">
               <p>Order a delivery</p>
@@ -112,18 +114,18 @@ const Specials = () => {
           </div>
         </div>{" "}
         <div className="card">
-          <img src="./greek salad.jpg" alt="" />
+          <img src="./lemon dessert.jpg" loading="eager" alt="lemon dessert" />
           <div className="card-data">
             <div className="title">
               {" "}
-              <h3>Greek salad</h3>
-              <p>$12.99</p>
+              <h3>Lemon Dessert</h3>
+              <p>$5.00</p>
             </div>
 
             <p>
-              The famous greek salad of crispy lettuce, peppers, olives and our
-              Chicago style feta cheese, garnished with crunchy garlic and
-              rosemary croutons.{" "}
+              {`This comes straight from grandma’s recipe book, every last
+              ingredient has been sourced and is as authentic as can be
+              imagined.`}
             </p>
             <div className="order">
               <p>Order a delivery</p>
@@ -148,53 +150,84 @@ const Specials = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 const CustomersSay = () => {
   return (
-    <div className="customer-container">
+    <section id="testimonial" className="customer-container">
       <h1>What Our Client Says</h1>
-      <div className="customer-card">
-        <img src="" alt="" />
-        <p>name</p>
-        <p>⭐⭐⭐⭐⭐</p>
-        <p>saying</p>
-      </div>{" "}
-      <div className="customer-card">
-        <img src="" alt="" />
-        <p>name</p>
-        <p>⭐⭐⭐⭐⭐</p>
-        <p>saying</p>
-      </div>{" "}
-      <div className="customer-card">
-        <img src="" alt="" />
-        <p>name</p>
-        <p>⭐⭐⭐⭐⭐</p>
-        <p>saying</p>
+      <div className="card-container">
+        <div className="customer-card">
+          <img src="./Mark James.jpg" alt="Mark James" />
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>Mark James</p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Architecto, reiciendis. Possimus voluptas perspiciatis nisi eveniet
+            odit doloribus.
+          </p>
+        </div>{" "}
+        <div className="customer-card">
+          <img src="./Andrea Smith.jpg" alt="Andrea Smith" />
+          <p>⭐⭐⭐⭐⭐</p>
+
+          <p>Andrea Smith</p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Architecto, reiciendis. Possimus voluptas perspiciatis nisi eveniet
+            odit doloribus.
+          </p>
+        </div>{" "}
+        <div className="customer-card">
+          <img src="./John Doe.jpg" alt="John Doe" />
+          <p>⭐⭐⭐⭐⭐</p>
+          <p>John Doe</p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Architecto, reiciendis. Possimus voluptas perspiciatis nisi eveniet
+            odit doloribus.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 const Chicago = () => {
   return (
-    <div className="about-container">
+    <section id="about" className="about-container">
       <div className="about">
         <h1>Little Lemon</h1>
         <h3>Chicago</h3>
-        <p>
-          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-          sint. Velit officia consequat duis enim velit mollit. Exercitation
-          veniam consequat sunt nostrud amet. Amet minim mollit non deserunt
-          ullamco est sit aliqua dolor do amet sint. Velit officia consequat
-          duis enim velit mollit.{" "}
+        <p className="about-text">
+          Little Lemon is owned by two Italian brothers, Mario and Adrian, who
+          moved to the United States to pursue their shared dream of owning a
+          restaurant.
+        </p>
+        <p className="about-text">
+          To craft the menu, Mario relies on family recipes and his experience
+          as a chef in Italy. Adrian does all the marketing for the restaurant
+          and led the effort to expand the menu beyond classic Italian to
+          incorporate additional cuisines from the Mediterranean region.
         </p>
       </div>
-      <img src="" alt="" />
-      <img src="" alt="" />
-    </div>
+      <div className="about-image-one-container">
+        <img
+          className="about-image-one"
+          src="./Mario and Adrian b.jpg"
+          alt="Mario and Adrian"
+        />
+      </div>{" "}
+      <div className="about-image-two-container">
+        <img
+          className="about-image-two"
+          src="./Mario and Adrian A.jpg"
+          alt="Mario and Adrian"
+        />
+      </div>
+    </section>
   );
 };
 
