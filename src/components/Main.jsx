@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useState } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 import "../App.css";
 
@@ -231,7 +231,135 @@ const Chicago = () => {
   );
 };
 
-const BookingPage = () => {};
+const BookingPage = () => {
+  const [people, setPeople] = useState(1);
+  const navigate = useNavigate();
+  const changeRoute = () => {
+    navigate("/confirmation");
+  };
+  return (
+    <section id="bookingPage" className="booking">
+      <form onSubmit={changeRoute}>
+        <div className="personal-information">
+          <h1>Personal Information</h1>
+          <div className="inputs">
+            <div className="input-field">
+              <label htmlFor="first-name">First Name</label>
+              <input
+                id="first-name"
+                type="text"
+                name="firstName"
+                minLength={3}
+                maxLength={50}
+                required
+              />
+            </div>
+            <div className="input-field">
+              <label htmlFor="last-name">Last Name</label>
+              <input
+                id="last-name"
+                type="text"
+                name="lastName"
+                minLength={3}
+                maxLength={50}
+                required
+              />
+            </div>
+            <div className="input-field">
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                name="Email"
+                minLength={4}
+                maxLength={200}
+                required
+              />
+            </div>
+            <div className="input-field">
+              <label htmlFor="phone-number">Phone Number</label>
+              <input
+                id="phone-number"
+                type="tel"
+                name="phoneNumber"
+                minLength={10}
+                maxLength={25}
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div className="booking-information">
+          <h1>Booking Information</h1>
+          <div className="inputs">
+            <div className="input-field">
+              <label htmlFor="people">Number of People</label>
+              <input
+                id="people"
+                type="number"
+                name="people"
+                min={1}
+                max={100}
+                value={people}
+                onChange={(e) => setPeople(e.target.value)}
+                required
+              />
+            </div>
+            <div className="input-field">
+              <label htmlFor="date">Select Date</label>
+              <input id="date" type="date" name="date" required />
+            </div>
+            <div className="input-field">
+              <label htmlFor="time">Select Time</label>
+              <input
+                id="time"
+                type="time"
+                name="time"
+                required
+                placeholder="70:30"
+              />
+            </div>
+            <div className="input-field">
+              <label htmlFor="occasion">Occasion</label>
+              <select id="occasion" name="occasion" required>
+                <option value={""}>None</option>
+                <option value={"Birthday"}>Birthday</option>
+                <option value={"Anniversary"}>Anniversary</option>
+                <option value={"Engagement"}>Engagement</option>
+                <option value={"Other"}>Other</option>
+              </select>
+            </div>
+            <div className="input-field">
+              <label htmlFor="preferences">Seating preferences</label>
+              <select id="preferences" name="preferences" required>
+                <option value={""}>None</option>
+                <option value={"Indoors"}>Indoors</option>
+                <option value={"Outdoor (Patio)"}>Outdoor (Patio)</option>
+                <option value={"Outdoor (Sidewalk)"}>Outdoor (Sidewalk)</option>
+              </select>
+            </div>
+          </div>
+          <div className="input-field">
+            <label htmlFor="comments">Additional Comments</label>
+            <textarea
+              id="comments"
+              rows={8}
+              cols={50}
+              placeholder="Additional Comments"
+              name="comments"
+              required
+            ></textarea>
+          </div>
+        </div>
+        <button type="submit">Book Table</button>
+      </form>
+    </section>
+  );
+};
+
+const Confirmation = () => {
+  return <h1>hi</h1>;
+};
 
 const Main = () => {
   return (
@@ -249,6 +377,7 @@ const Main = () => {
         }
       ></Route>
       <Route path="/booking" element={<BookingPage />}></Route>
+      <Route path="/confirmation" element={<Confirmation />}></Route>
     </Routes>
   );
 };

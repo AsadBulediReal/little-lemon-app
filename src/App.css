@@ -4,6 +4,7 @@
   margin: 0;
   font-family: Karla, sans-serif;
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -192,6 +193,7 @@ nav .nav-list li a:hover {
   align-items: center;
   justify-content: center;
   background-color: #495e57;
+  padding: 4rem;
 }
 
 .customer-container h1 {
