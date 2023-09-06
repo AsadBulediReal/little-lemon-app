@@ -15,7 +15,7 @@ const Homepage = () => {
             traditional recipes served with a modern twist.
           </p>
 
-          <a className="btn" href="#">
+          <a className="btn" href="/booking">
             Reserve Table
           </a>
         </div>
@@ -37,7 +37,7 @@ const Specials = () => {
     <section id="menu" className="specials-container">
       <h1>This weeks Specials</h1>
 
-      <a className="btn" href="#">
+      <a className="btn" href="/booking">
         Reserve Table
       </a>
 
@@ -289,6 +289,7 @@ const BookingPage = () => {
             </div>
           </div>
         </div>
+        <hr />
         <div className="booking-information">
           <h1>Booking Information</h1>
           <div className="inputs">
@@ -338,27 +339,45 @@ const BookingPage = () => {
                 <option value={"Outdoor (Sidewalk)"}>Outdoor (Sidewalk)</option>
               </select>
             </div>
-          </div>
-          <div className="input-field">
-            <label htmlFor="comments">Additional Comments</label>
-            <textarea
-              id="comments"
-              rows={8}
-              cols={50}
-              placeholder="Additional Comments"
-              name="comments"
-              required
-            ></textarea>
+            <div className="input-field">
+              <label htmlFor="comments">Additional Comments</label>
+              <textarea
+                id="comments"
+                rows={8}
+                cols={50}
+                placeholder="Additional Comments"
+                name="comments"
+                required
+              ></textarea>
+            </div>
           </div>
         </div>
-        <button type="submit">Book Table</button>
+        <p>
+          Note: You cannot edit your reservation after submission. Please
+          double-check your answer before submitting your reservation request.
+        </p>
+
+        <button className="btn" type="submit">
+          Book Table
+        </button>
       </form>
     </section>
   );
 };
 
 const Confirmation = () => {
-  return <h1>hi</h1>;
+  return (
+    <section className="confirmation">
+      <div className="container">
+        <h1>Your Reservation is Confirmed!</h1>
+        <h2>A confirmation message has been sent to your email.</h2>
+        <h3>Thanks for dining with us!</h3>
+      </div>
+      <a className="btn" href="/">
+        Home
+      </a>
+    </section>
+  );
 };
 
 const Main = () => {
