@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "../App.css";
 
 const Nav = () => {
+  const [isOpen, setIsopen] = useState(false);
+  console.log(isOpen);
   return (
-    <nav>
+    <nav className={isOpen ? "open" : ""} onClick={() => setIsopen(!isOpen)}>
       <img className="logo" src="/Logo.svg" alt="Little Lemon" />
+      <div className={isOpen ? "hamburger-menu menu" : "hamburger-menu"}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <ul className="nav-list">
         <li>
           <a href="/">Home</a>

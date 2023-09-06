@@ -24,6 +24,40 @@ ul a:hover {
   top: 21px;
 }
 
+.hamburger-menu {
+  position: absolute;
+  left: 85%;
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 3rem;
+  margin-bottom: 5px;
+  height: 0.5rem;
+  background-color: #ee9972;
+  transition: all 200ms ease-in;
+}
+
+.menu span {
+  position: absolute;
+  left: 85%;
+}
+
+.menu span:nth-child(1) {
+  transform: rotate(41deg);
+}
+
+.menu span:nth-child(2),
+.menu span:nth-child(3) {
+  transform: rotate(137deg);
+}
+
+.open {
+  position: relative;
+}
+
 nav .nav-list {
   display: flex;
   list-style: none;
@@ -124,7 +158,7 @@ nav .nav-list li a:hover {
 
 .specials-container .btn {
   position: absolute;
-  left: 1400px;
+  left: 80%;
   top: 920px;
 }
 
@@ -429,4 +463,281 @@ hr {
 
 .confirmation .btn {
   scale: 1.4;
+}
+
+/* responsive css */
+
+@media (max-width: 1500px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1rem;
+    gap: 1rem;
+  }
+  .logo {
+    position: static;
+  }
+
+  nav .nav-list {
+    margin: 0;
+  }
+
+  .home-container {
+    margin: 0;
+  }
+
+  .specials-container .btn {
+    top: 950px;
+  }
+
+  .about {
+    margin-left: 10%;
+  }
+  .about-image-one-container {
+    left: 70%;
+  }
+  .about-image-two-container {
+    left: 60%;
+  }
+}
+
+@media (max-width: 1350px) {
+  .specials-container {
+    width: 80vw;
+    margin: 7rem auto 10rem auto;
+  }
+
+  .specials-container h1 {
+    font-size: 2.5rem;
+    margin-left: -4rem;
+  }
+
+  .specials-container .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .specials-container .btn {
+    left: 70% !important;
+  }
+
+  .customer-container .card-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 70vw;
+  }
+
+  .about {
+    margin-left: 2%;
+    scale: 0.9;
+  }
+
+  .about-image-one-container {
+    scale: 0.9;
+    left: 65%;
+  }
+
+  .about-image-two-container {
+    scale: 0.9;
+    left: 55%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .home-content {
+    flex-direction: column;
+    gap: 0;
+    padding: 5rem;
+    text-align: center;
+  }
+
+  .hero-img {
+    margin: 0;
+    scale: 0.8;
+    display: none;
+  }
+
+  .specials-container h1 {
+    font-size: 2rem;
+    margin-left: -3rem;
+  }
+  .specials-container .btn {
+    top: 760px;
+    left: 545px;
+  }
+
+  .about {
+    margin-left: 0;
+    scale: 0.7;
+  }
+
+  .about-image-one-container {
+    scale: 0.7;
+    top: 15%;
+    left: 65%;
+  }
+
+  .about-image-two-container {
+    scale: 0.7;
+    top: 25%;
+    left: 55%;
+  }
+
+  .footer-container .footer-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .specials-container h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-left: -3rem;
+  }
+
+  .about {
+    margin-left: -2rem;
+  }
+
+  .about-image-one-container,
+  .about-image-two-container {
+    scale: 0.6;
+    margin-left: -1rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .hamburger-menu {
+    display: block;
+  }
+  .open .nav-list {
+    right: 0;
+  }
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -300px;
+    text-align: center;
+    top: 100px;
+    background-color: #ee9972;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 250ms ease-in;
+    z-index: 10;
+  }
+
+  nav .nav-list li a {
+    color: white;
+  }
+
+  nav {
+    flex-direction: row;
+    justify-content: normal;
+    position: relative;
+  }
+
+  .specials-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .specials-container h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .specials-container .btn {
+    position: static;
+  }
+  .customer-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .specials-container .cards {
+    margin: 0;
+  }
+
+  .about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scale: 1;
+  }
+  .about h1 {
+    font-size: 3rem;
+    margin-top: 13rem;
+  }
+  .about-image-one-container,
+  .about-image-two-container {
+    display: none;
+  }
+  .footer-container {
+    gap: 3rem;
+  }
+
+  .footer-container img {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-info h1 {
+    font-size: 3rem;
+  }
+
+  .home-info p {
+    font-size: 25px;
+  }
+  .customer-container h1 {
+    font-size: 2rem;
+  }
+  .about-container {
+    display: block;
+  }
+  .about {
+    margin: auto;
+    text-align: center;
+  }
+  .about h1 {
+    font-size: 2rem;
+  }
+  .about h3 {
+    font-size: 1.5rem;
+  }
+  .about-text {
+    font-size: 0.8rem;
+    width: 200px;
+  }
+}
+
+@media (max-width: 450px) {
+  .booking form {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .booking {
+    margin: 0;
+  }
+  .booking form {
+    scale: 0.8;
+    margin-left: 1.5rem;
+  }
+  .booking form div {
+    scale: 0.9;
+  }
 }
