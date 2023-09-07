@@ -6,9 +6,9 @@ const Nav = () => {
   const [isOpen, setIsopen] = useState(false);
   console.log(isOpen);
   return (
-    <nav className={isOpen ? "open" : ""} onClick={() => setIsopen(!isOpen)}>
+    <nav className={isOpen ? "open" : ""}>
       <img className="logo" src="/Logo.svg" alt="Little Lemon" />
-      <div className={isOpen ? "hamburger-menu menu" : "hamburger-menu"}>
+      <div className={isOpen ? "hamburger-menu menu" : "hamburger-menu"} onClick={() => setIsopen(!isOpen)}>
         <span></span>
         <span></span>
         <span></span>
