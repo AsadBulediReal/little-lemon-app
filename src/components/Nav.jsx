@@ -4,10 +4,11 @@ import "../App.css";
 
 const Nav = () => {
   const [isOpen, setIsopen] = useState(false);
-  console.log(isOpen);
   return (
     <nav className={isOpen ? "open" : ""}>
+        <a href="/">
       <img className="logo" src="/Logo.svg" alt="Little Lemon" />
+          </a>
       <div className={isOpen ? "hamburger-menu menu" : "hamburger-menu"} onClick={() => setIsopen(!isOpen)}>
         <span></span>
         <span></span>
