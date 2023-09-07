@@ -106,7 +106,7 @@ const Footer = () => {
         © Copyright 2023{" "}
         <a
           target="_blank"
-          href="https://www.linkedin.com/in/marventures/"
+          href="https://www.linkedin.com/in/jamil-ahmed-buledi-2a505a54/"
           rel="noreferrer"
         >
           Jamil Ahmend Buledi
